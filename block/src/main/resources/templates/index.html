@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Block_Panel</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <style>
+        .row {
+            margin-bottom: 30px;
+        }
+
+        .row .row {
+            margin-top: 20px;
+            margin-bottom: 0;
+        }
+
+        [class*="col-"] {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            background-color: rgba(228, 228, 228, 0.5);
+            border: 1px solid rgba(86, 120, 124, .75);
+        }
+    </style>
+</head>
+<body>
+<div th:replace="~{common/side-bar  :: header}"></div>
+<div class="container" style="margin-top: 200px">
+    <div class="row">
+        <div class="col-md-4 text-center offset-4" style="font-size:30px; color:#000;">
+            区块登录
+        </div>
+        <div class="col-md-4 text-center offset-4" style="font-size:30px; color:#000;">
+            <div class="form-group">
+                <small id="helpId" class="form-text text-muted"></small>
+                <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="账号">
+                <p></p>
+                <input type="password" class="form-control" name="" id="" placeholder="密码">
+            </div>
+            <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false"
+                    autocomplete="off"
+                    style="background-color: cadetblue">登录
+            </button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
