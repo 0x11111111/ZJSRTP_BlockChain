@@ -57,6 +57,7 @@ public class Tests {
         chain.addLast(new BlockNodeWrapper(new Stud_Info("CJB", "002")));
         chain.addLast(new BlockNodeWrapper(new Stud_Info("CJC", "003")));
         chain.addLast(new BlockNodeWrapper(new Stud_Info("CJD", "004")));
+        chain.addLast(new BlockNodeWrapper(new Stud_Info("CJE", "005")));
         System.out.println(chain.getHash());
         chain.updateNode(2,new Stud_Info("CJT","999"));
         System.out.println(chain.getHash());
