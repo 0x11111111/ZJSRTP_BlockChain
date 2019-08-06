@@ -50,7 +50,6 @@ public enum Global {
 //======================================runtime section=============================
 
     public void runtime_job(){
-//        handler.addTask(new PrintWords());
 //        Stud_Info stud_info=new Stud_Info("CJ","001");
 //        stud_info.getCourseList().add(new Course("null"));
 //        DataManager.digest(stud_info);
