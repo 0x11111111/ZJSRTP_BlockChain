@@ -14,7 +14,7 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-class SHA256_Encoder {
+public class SHA256_Encoder {
     public static String generateSHA256(String orgStr){
         MessageDigest messageDigest;
         String result="";

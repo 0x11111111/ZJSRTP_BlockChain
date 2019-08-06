@@ -1,11 +1,13 @@
-package cn.lpctstr.net;
+package cn.lpctstr;
 
-
+import cn.lpctstr.cmdTable.PCTable;
 import cn.lpctstr.net.ObjTransPart.ObjReceiver;
 import cn.lpctstr.net.ObjTransPart.ObjSender;
 import cn.lpctstr.net.cmdModel.ICommand;
 import cn.lpctstr.net.cmdModel.TransCommand;
-import cn.lpctstr.net.cmdTable.PCTable;
+import cn.lpctstr.node.data.model.Stud_Info;
+import cn.lpctstr.node.data.util.ArrayMerkleTree;
+import cn.lpctstr.node.data.wrapper.BlockNodeWrapper;
 import org.junit.Test;
 
 /**
@@ -18,7 +20,7 @@ public class Tests {
 
     @Test
     public void test() throws InterruptedException {
-        PCTable table = new PCTable(20);
+        PCTable<ICommand> table = new PCTable<>(new ICommand[20]);
         ObjSender sender = new ObjSender.Builder("localhost").setTag("Sender").build();
         ObjReceiver receiver = new ObjReceiver.Builder(table).setTag("Receiver").build();
         receiver.begin();
@@ -48,10 +50,22 @@ public class Tests {
 
     }
 
+    @Test
+    public void ArrayTree() {
+        ArrayMerkleTree chain = new ArrayMerkleTree();
+        chain.addLast(new BlockNodeWrapper(new Stud_Info("CJA", "001")));
+        chain.addLast(new BlockNodeWrapper(new Stud_Info("CJB", "002")));
+        chain.addLast(new BlockNodeWrapper(new Stud_Info("CJC", "003")));
+        chain.addLast(new BlockNodeWrapper(new Stud_Info("CJD", "004")));
+        System.out.println(chain.getHash());
+        chain.updateNode(2,new Stud_Info("CJT","999"));
+        System.out.println(chain.getHash());
+    }
+
 
     @Test
     public void Table_Test() {
-        PCTable table = new PCTable(10);
+        PCTable<ICommand> table = new PCTable<>(new ICommand[20]);
         new Thread(() -> {
             int i = 0;
             while (true) {

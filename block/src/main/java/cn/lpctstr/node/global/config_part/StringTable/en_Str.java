@@ -11,5 +11,6 @@ public class en_Str extends ITable {
         TaskUndefinedException = "Task Type Undefined!";
         ConfigNotExist = "Config file not exists, now create a new one.";
         ConfigHasLoaded = "Config has loaded.";
+        LoadBlock ="Module %s Loads.";
     }
 }

@@ -1,5 +1,9 @@
 package cn.lpctstr.node.data.model;
 
+import cn.hutool.core.lang.UUID;
+import cn.lpctstr.node.data.AbstractDataInfo;
+import cn.lpctstr.node.data.util.SHA256_Encoder;
+
 /**
  * @Author:LPCTSTR_MSR
  * @Description: Maybe move into the internal of the @Stud_Info
@@ -53,6 +57,9 @@ public class Course extends AbstractDataInfo {
      */
     public Course(String name, String hash) {
         this(name, 5, hash);
+    }
+    public Course(String name) {
+        this(name, 5, SHA256_Encoder.generateSHA256(UUID.fastUUID().toString()));
     }
 
 }

@@ -1,5 +1,7 @@
 package cn.lpctstr.node.data.model;
 
+import cn.lpctstr.node.data.AbstractDataInfo;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,5 +41,12 @@ public class Stud_Info extends AbstractDataInfo {
 
     public List<Course> getCourseList() {
         return courseList;
+    }
+
+    public String getCourseAbstract(){
+        StringBuilder tmp = new StringBuilder();
+        for (Course course : courseList)
+            tmp.append(course.getHash());
+        return tmp.toString();
     }
 }

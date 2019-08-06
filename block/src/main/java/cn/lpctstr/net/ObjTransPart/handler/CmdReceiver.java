@@ -1,7 +1,7 @@
 package cn.lpctstr.net.ObjTransPart.handler;
 
 import cn.lpctstr.net.cmdModel.ICommand;
-import cn.lpctstr.net.cmdTable.PCTable;
+import cn.lpctstr.cmdTable.PCTable;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 
@@ -13,11 +13,11 @@ import io.netty.channel.ChannelInboundHandlerAdapter;
  */
 public class CmdReceiver extends ChannelInboundHandlerAdapter {
 
-    public CmdReceiver(PCTable table) {
+    public CmdReceiver(PCTable<ICommand> table) {
         this.table = table;
     }
 
-    private PCTable table;
+    private PCTable<ICommand> table;
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) {

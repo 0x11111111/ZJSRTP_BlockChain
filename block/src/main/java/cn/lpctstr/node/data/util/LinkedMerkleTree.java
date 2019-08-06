@@ -11,7 +11,7 @@ package cn.lpctstr.node.data.util;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MerkleTree {
+public class LinkedMerkleTree {
     public TreeNode root;
 
     public TreeNode getRoot() {
@@ -20,7 +20,7 @@ public class MerkleTree {
 
     private List<TreeNode> buffer;
 
-    public MerkleTree(List<String> src_data) {
+    public LinkedMerkleTree(List<String> src_data) {
         buffer = new ArrayList<>();
         int id = 0;
         for (String tmp : src_data) {

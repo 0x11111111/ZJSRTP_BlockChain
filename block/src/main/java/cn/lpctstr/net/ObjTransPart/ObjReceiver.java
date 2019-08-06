@@ -1,7 +1,7 @@
 package cn.lpctstr.net.ObjTransPart;
 
 import cn.lpctstr.net.ObjTransPart.Initializer.ObjReceiverInitializer;
-import cn.lpctstr.net.cmdTable.PCTable;
+import cn.lpctstr.cmdTable.PCTable;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelOption;

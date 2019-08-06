@@ -2,7 +2,7 @@ package cn.lpctstr.net.ObjTransPart.Initializer;
 
 import cn.lpctstr.net.ObjTransPart.handler.CmdReceiver;
 import cn.lpctstr.net.ObjTransPart.handler.ObjReceiverHandler;
-import cn.lpctstr.net.cmdTable.PCTable;
+import cn.lpctstr.cmdTable.PCTable;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelInitializer;
 import io.netty.handler.codec.serialization.ClassResolvers;

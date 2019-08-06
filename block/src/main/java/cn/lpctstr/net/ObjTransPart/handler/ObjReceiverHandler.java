@@ -22,6 +22,6 @@ public class ObjReceiverHandler extends ChannelInboundHandlerAdapter {
             transCommand.getArgs().forEach(str-> tmp[0] +=(str+ " "));
             System.out.println(tmp[0]);
         }
-        ctx.fireChannelRead(msg);   //传递给下一个Handler
+        ctx.fireChannelRead(msg);   //deliver into next Handler
     }
 }

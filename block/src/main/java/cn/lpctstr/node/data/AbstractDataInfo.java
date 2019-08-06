@@ -1,4 +1,4 @@
-package cn.lpctstr.node.data.model;
+package cn.lpctstr.node.data;
 
 import java.io.Serializable;
 

@@ -1,8 +1,12 @@
 package cn.lpctstr.web.Controller;
 
+import cn.lpctstr.node.global.Global;
+import cn.lpctstr.web.Model.Command;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @Author:LPCTSTR_MSR
@@ -12,12 +16,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 
 @Controller
-@RequestMapping("/")
 public class IndexController {
 
 //    @RequestMapping(method = RequestMethod.GET, path = "/")
-    @RequestMapping("")
+    @RequestMapping("/")
     public String index(ModelMap model) {
-        return "index";
+        return "example";
+    }
+
+
+    @ResponseBody
+    @PostMapping(path = "node")
+    void getPostCmd(Command command){
+        String c = command.getCmd();
+        System.out.println(c);
+        if(c.equals("fire"))
+            Global.INSTANCE.handler.fire();
     }
 }

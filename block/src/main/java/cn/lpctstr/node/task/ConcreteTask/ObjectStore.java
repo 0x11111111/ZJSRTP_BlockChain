@@ -18,13 +18,14 @@ import java.io.ObjectOutputStream;
 public class ObjectStore extends PostTask {
     Object obj;
     public ObjectStore(Object obj) {
-        this(obj.getClass().getName(),obj);
+
+        this(obj.toString(),obj);
     }
 
     public ObjectStore(String id, Object obj ) {
         super(id,()->{
             try {
-                FileOutputStream fo=new FileOutputStream(FileUtil.touch(Global.INSTANCE.getConfig_ini().get("Path","DataPath") +"/_"+id+".bin"));
+                FileOutputStream fo=new FileOutputStream(FileUtil.touch(Global.getConfig_ini().get("Path","DataPath") +"/_"+id+".bin"));
                 ObjectOutputStream op=new ObjectOutputStream(fo);
                 op.writeObject(obj);
                 Global.getConfig_ini().set("_"+id,"File","_"+id+".bin");

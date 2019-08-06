@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class WebApplication {
 
     public static void main(String[] args) {
-        Global.main(null);
+        Global.main(args);
         SpringApplication.run(WebApplication.class, args);
     }
 
